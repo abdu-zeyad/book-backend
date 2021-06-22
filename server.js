@@ -10,11 +10,9 @@ const deletebooksHandler = require("./modules/DeleteBooks");
 
 const server = express();
 server.use(cors());
-server.use(express.json()); // to read POST request as json (if don't use it you will have undefiend)
+server.use(express.json());
 
 const PORT = process.env.PORT;
-
-////////////////////////////////////////////// routes ///////////////////////////////////////
 
 //localhost:3001
 server.get("/", homeHandler);
@@ -28,13 +26,9 @@ server.post("/addbooks", addbooksHandler);
 //localhost:3001/deletebooks
 server.delete("/deletebooks/:id", deletebooksHandler);
 
-//////////////////////////////////////////// functions //////////////////////////////////////
-
 function homeHandler(req, res) {
   res.send("Home page");
 }
-
-/////////////////////////////////////////// listen ///////////////////////////////////////////
 
 server.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
