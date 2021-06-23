@@ -18,13 +18,13 @@ const PORT = process.env.PORT;
 server.get("/", homeHandler);
 
 //localhost:3001/books
-server.get("/books", MongooseItems.booksHandler);
+// server.get("/books", MongooseItems.booksHandler);
 
-//localhost:3001/addbooks
-server.post("/addbooks", addbooksHandler);
+// //localhost:3001/addbooks
+// server.post("/addbooks", addbooksHandler);
 
-//localhost:3001/deletebooks
-server.delete("/deletebooks/:id", deletebooksHandler);
+// //localhost:3001/deletebooks
+// server.delete("/deletebooks/:id", deletebooksHandler);
 
 function homeHandler(req, res) {
   res.send("Home page");

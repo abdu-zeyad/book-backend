@@ -25,8 +25,8 @@ const Owners = mongoose.model("owner", owner);
 // funtions:
 
 function seedOwnersCollection() {
-  const ibrahim = new Owners({
-    email: "ibrahemaldrynee@gmail.com",
+  const abdelmajed = new Owners({
+    email: "abdalmajeed76543@gmail.com",
     books: [
       {
         name: "book1",
@@ -41,9 +41,9 @@ function seedOwnersCollection() {
     ],
   });
 
-  ibrahim.save();
+  abdelmajed.save();
 }
-// seedOwnersCollection(); // this function when called create dummy data in the database
+seedOwnersCollection(); // this function when called create dummy data in the database
 
 function booksHandler(req, res) {
   let email = req.query.email;
