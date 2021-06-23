@@ -43,7 +43,9 @@ function seedOwnersCollection() {
 
   abdelmajed.save();
 }
-seedOwnersCollection(); // this function when called create dummy data in the database
+// seedOwnersCollection(); // this function when called create dummy data in the database
+
+//localhost:3001/books?email=abdalmajeed76543@gmail.com
 
 function booksHandler(req, res) {
   let email = req.query.email;
@@ -51,6 +53,7 @@ function booksHandler(req, res) {
   Owners.find({ email: email }, (err, data) => {
     err ? res.status(500).send("there is error") : res.send(data[0].books);
   });
+  console.log(email);
 }
 
 module.exports = {
